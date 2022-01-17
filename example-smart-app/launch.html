@@ -24,12 +24,24 @@
     <!-- Prevent session bleed caused by single threaded embedded browser and sessionStorage API -->
     <!-- https://github.com/cerner/fhir-client-cerner-additions -->
     <script src='./lib/js/fhir-client-cerner-additions-1.0.0.js'></script>
+    <!-- When connecting directly to Cerner -->
+    <!--
+      <script>
+        FHIR.oauth2.authorize({
+          'client_id': 'f84cd7fa-8a7e-44dc-a627-e65941fff593',
+          'scope': 'patient/Patient.read patient/Observation.read launch online_access openid profile'
+        });
+      </script>
+    -->
+
+    <!-- When connecting through interopiO's Proxy -->
     <script>
-      FHIR.oauth2.authorize({
-        'client_id': 'f84cd7fa-8a7e-44dc-a627-e65941fff593',
-        'scope':  'patient/Patient.read patient/Observation.read launch online_access openid profile'
+      FHIR.oauth2.authorize(
+        'client_id': '9aaad1af-552b-4c64-9199-d0f9fac317b0',
+        'scope': 'patient/Patient.read patient/Observation.read launch openid profile'
       });
     </script>
+    
     <div class="spinner">
       <div class="bounce1"></div>
       <div class="bounce2"></div>
