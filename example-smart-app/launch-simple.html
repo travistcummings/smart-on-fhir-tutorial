@@ -6,7 +6,7 @@
     <title>Example-SMART-App</title>
 
     <script type="text/javascript">
-      function onLoad() {
+      function insertText() {
           document.getElementById('launched_from').innerHTML = document.referrer;
           document.getElementById('launch_url').innerHTML = window.location.href;
       }
@@ -21,12 +21,9 @@
     </script>
   </head>
 
-  <body>
+  <body onload="insertText();">
     <!-- FHIR Client JS Library -->
     <script src='./lib/js/fhir-client-v0.1.12.js'></script>
-    <script>
-      document.getElementById("launch_url").innerHTML = window.location.href;
-    </script>
 
     <form action="javascript:doAuthorize();">
       <table border="1">
