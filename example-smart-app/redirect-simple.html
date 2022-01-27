@@ -12,8 +12,8 @@
       }
       
       function insertText() {
-        document.getElementById('launched_from').innerHTML = document.referrer;
-        document.getElementById('launch_url').innerHTML = window.location.href;
+        document.getElementById('redirected_from').innerHTML = document.referrer;
+        document.getElementById('redirect_url').innerHTML = window.location.href;
         document.getElementById('code').innerHTML = getRequestParam("code");
         document.getElementById('state').innerHTML = getRequestParam("state");
       }
@@ -35,32 +35,20 @@
     <form>
       <table border="1" cellpadding="1">
         <tr>
-          <td>Launched from</td>
-          <td id="launched_from"></td>
+          <td>Redirected from</td>
+          <td id="redirected_from"></td>
         </tr>
         <tr>
-          <td>Launched URL</td>
-          <td id="launch_url"></td>
+          <td>Redirect URL</td>
+          <td id="redirect_url"></td>
         </tr>
         <tr>
-          <td>ISS</td>
+          <td>Code</td>
           <td id="code"></td>
         </tr>
         <tr>
-          <td>Launch</td>
+          <td>State</td>
           <td id="state"></td>
-        </tr>
-        <tr>
-          <td>Client Id</td>
-          <td><input type="text" id="client_id" name="client_id" size="100" value="a135b6b9-3940-4b9e-a750-3777be26d10a"/></td>
-        </tr>
-        <tr>
-          <td>Scope</td>
-          <td><input type="text" id="scope" name="scope" size="100" value="launch openid profile fhirUser"/></td>
-        </tr>
-        <tr>
-          <td>Redirect URI</td>
-          <td><input type="text" id="redirect_uri" name="redirect_uri" size="200" value="https://travistcummings.github.io/smart-on-fhir-tutorial/example-smart-app/redirect-simple.html"/></td>
         </tr>
       </table>
       <br/><br/>
