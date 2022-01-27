@@ -7,19 +7,19 @@
 
     <script type="text/javascript">
       function insertText() {
-          document.getElementById('launched_from').innerHTML = document.referrer;
-          document.getElementById('launch_url').innerHTML = window.location.href;
+          document.getElementById('launched_from').value = document.referrer;
+          document.getElementById('launch_url').value = window.location.href;
       }
   
       function doAuthorize() {
         clientId = document.getElementById('client_id').innerHTML;
         scope = document.getElementById('scope').innerHTML;
 
-        alert("doAuthorize()" + clientId + ", " + scope);
-//      FHIR.oauth2.authorize({
-//        'client_id': form["client_id"],
-//        'scope':  form["scope"]
-//      });
+        alert("Calling authorize with client_id [" + clientId + "] and scope [" + scope + "]");
+      FHIR.oauth2.authorize({
+        'client_id': clientId,
+        'scope':  scope
+      });
       }
     </script>
     
@@ -28,7 +28,7 @@
         border: 1px solid black;
       }
       th, td {
-        padding: 5px;
+        padding: 10px;
       }
     </style>
   </head>
