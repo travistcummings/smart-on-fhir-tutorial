@@ -46,7 +46,7 @@
     <!-- FHIR Client JS Library -->
     <script src='./lib/js/fhir-client-v0.1.12.js'></script>
 
-    <form onsubmit="return doAuthorize();">
+    <form>
       <table border="1" cellpadding="1">
         <tr>
           <td>Launched from</td>
@@ -78,7 +78,7 @@
         </tr>
       </table>
       <br/><br/>
-      <input type="submit" value="Proceed with Authorize"/>
+      <input type="button" value="Proceed with Authorize" onclick="doAuthorize();"/>
     </form>
   </body>
 </html>
