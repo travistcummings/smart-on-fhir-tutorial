@@ -21,12 +21,14 @@
       function doAuthorize() {
         clientId = document.getElementById('client_id').value;
         scope = document.getElementById('scope').value;
+        redirect_uri = document.getElementById('redirect_uri').value;
 
         alert("Calling authorize with client_id [" + clientId + "] and scope [" + scope + "]");
-      FHIR.oauth2.authorize({
-        'client_id': clientId,
-        'scope':  scope
-      });
+        FHIR.oauth2.authorize({
+          'client_id': clientId,
+          'scope':  scope,
+          'redirect_uri': redirect_uri
+        });
       }
     </script>
     
@@ -69,6 +71,11 @@
         <tr>
           <td>Scope</td>
           <td><input type="text" id="scope" name="scope" size="100" value="launch openid profile fhirUser"/></td>
+        </tr>
+        <tr>
+          <td>Redirect URI</td>
+          <td><input type="text" id="redirect_uri" name="redirect_uri" size="200" value="https://travistcummings.github.io/smart-on-fhir-tutorial/example-smart-app/launch-simple.html?client_id=a135b6b9-3940-4b9e-a750-3777be26d10a&scope=launch+openid+profile+fhirUser
+redirect-simple.html"/></td>
         </tr>
       </table>
       <br/><br/>
