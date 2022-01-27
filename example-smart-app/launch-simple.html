@@ -23,7 +23,6 @@
         scope = document.getElementById('scope').value;
         redirect_uri = document.getElementById('redirect_uri').value;
 
-        alert("Calling authorize with client_id [" + clientId + "] and scope [" + scope + "]");
         FHIR.oauth2.authorize({
           'client_id': clientId,
           'scope':  scope,
