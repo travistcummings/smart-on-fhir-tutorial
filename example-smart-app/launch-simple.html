@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Example-SMART-App</title>
+  </head>
+  <script>
+    function doAuthorize() {
+      FHIR.oauth2.authorize({
+        'client_id': 'a135b6b9-3940-4b9e-a750-3777be26d10a',
+        'scope':  'launch openid profile fhirUser'
+      });
+    }
+  </script>
+  <body>
+    <!-- FHIR Client JS Library -->
+    <script src='./lib/js/fhir-client-v0.1.12.js'></script>
+    <script>
+      document.getElementById("demo").innerHTML = window.location.href;
+    </script>
+
+    <h3>Launched from:</h3>
+    <p id="demo">
+    </p>
+    <form>
+    <input type="button" name="Proceed with Authorize" onClick="javascript:doAuthorize();">
+    </form>
+    </script>
+    <div class="spinner">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
+  </body>
+</html>
