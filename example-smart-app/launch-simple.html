@@ -18,9 +18,19 @@
     <!-- FHIR Client JS Library -->
     <script src='./lib/js/fhir-client-v0.1.12.js'></script>
     <script>
-      document.getElementById("demo").innerHTML = window.location.href;
+      document.getElementById("launch-url").innerHTML = window.location.href;
     </script>
 
+    <table>
+      <tr>
+        <td>Launched from:</td>
+        <td><div id="launched-from" /></td>
+      </tr>
+      <tr>
+        <td>Launched URL:</td>
+        <td><div id="launch-url" /></td>
+      </tr>
+    </table>
     <h3>Launched from:</h3>
     <p id="demo">
     </p>
