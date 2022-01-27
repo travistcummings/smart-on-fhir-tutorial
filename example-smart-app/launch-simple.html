@@ -4,16 +4,23 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Example-SMART-App</title>
+
+    <script type="text/javascript">
+      function onLoad() {
+          document.getElementById('launched_from').innerHTML = document.referrer;
+          document.getElementById('launch_url').innerHTML = window.location.href;
+      }
+  
+      function doAuthorize(form) {
+        alert("doAuthorize()" + form["client_id"] + ", " + form["scope"]);
+//      FHIR.oauth2.authorize({
+//        'client_id': form["client_id"],
+//        'scope':  form["scope"]
+//      });
+      }
+    </script>
   </head>
-  <script>
-    function doAuthorize(form) {
-      alert("doAuthorize()" + form["client_id"] + ", " + form["scope"]);
-//     FHIR.oauth2.authorize({
-//       'client_id': form["client_id"],
-//       'scope':  form["scope"]
-//     });
-    }
-  </script>
+
   <body>
     <!-- FHIR Client JS Library -->
     <script src='./lib/js/fhir-client-v0.1.12.js'></script>
@@ -25,11 +32,11 @@
       <table>
         <tr>
           <td>Launched from</td>
-          <td><div id="launched_from" /></td>
+          <td id="launched_from"></td>
         </tr>
         <tr>
           <td>Launched URL</td>
-          <td><div id="launch_url" /></td>
+          <td id="launch_url"></td>
         </tr>
         <tr>
           <td>Client Id</td>
