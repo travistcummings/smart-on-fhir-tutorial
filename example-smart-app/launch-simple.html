@@ -6,9 +6,15 @@
     <title>Example-SMART-App</title>
 
     <script type="text/javascript">
+      function getRequestParam(name){
+       if (name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
+        return decodeURIComponent(name[1]);
+      }
+      
       function insertText() {
-          document.getElementById('launched_from').innerHTML = document.referrer;
-          document.getElementById('launch_url').innerHTML = window.location.href;
+        document.getElementById('launched_from').innerHTML = document.referrer;
+        document.getElementById('launch_url').innerHTML = window.location.href;
+        document.getElementById('iss').innerHTML = getRequestParam("iss");
       }
   
       function doAuthorize() {
@@ -48,6 +54,14 @@
           <td id="launch_url"></td>
         </tr>
         <tr>
+          <td>ISS</td>
+          <td id="iss"></td>
+        </tr>
+        <tr>
+          <td>Launch</td>
+          <td id="launch"></td>
+        </tr>
+        <tr>
           <td>Client Id</td>
           <td><input type="text" id="client_id" name="client_id" size="100" value="a135b6b9-3940-4b9e-a750-3777be26d10a"/></td>
         </tr>
@@ -59,11 +73,5 @@
       <br/><br/>
       <input type="submit" value="Proceed with Authorize"/>
     </form>
-    
-    <div class="spinner">
-      <div class="bounce1"></div>
-      <div class="bounce2"></div>
-      <div class="bounce3"></div>
-    </div>
   </body>
 </html>
