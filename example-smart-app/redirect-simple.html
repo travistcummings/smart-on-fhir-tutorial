@@ -14,20 +14,8 @@
       function insertText() {
         document.getElementById('launched_from').innerHTML = document.referrer;
         document.getElementById('launch_url').innerHTML = window.location.href;
-        document.getElementById('iss').innerHTML = getRequestParam("iss");
-        document.getElementById('launch').innerHTML = getRequestParam("launch");
-      }
-  
-      function doAuthorize() {
-        clientId = document.getElementById('client_id').value;
-        scope = document.getElementById('scope').value;
-        redirect_uri = document.getElementById('redirect_uri').value;
-
-        FHIR.oauth2.authorize({
-          'client_id': clientId,
-          'scope':  scope,
-          'redirect_uri': redirect_uri
-        });
+        document.getElementById('code').innerHTML = getRequestParam("code");
+        document.getElementById('state').innerHTML = getRequestParam("state");
       }
     </script>
     
@@ -56,11 +44,11 @@
         </tr>
         <tr>
           <td>ISS</td>
-          <td id="iss"></td>
+          <td id="code"></td>
         </tr>
         <tr>
           <td>Launch</td>
-          <td id="launch"></td>
+          <td id="state"></td>
         </tr>
         <tr>
           <td>Client Id</td>
