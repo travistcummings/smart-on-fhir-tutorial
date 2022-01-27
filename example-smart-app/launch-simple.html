@@ -11,22 +11,34 @@
           document.getElementById('launch_url').innerHTML = window.location.href;
       }
   
-      function doAuthorize(form) {
-        alert("doAuthorize()" + form["client_id"] + ", " + form["scope"]);
+      function doAuthorize() {
+        clientId = document.getElementById('client_id').innerHTML;
+        scope = document.getElementById('scope').innerHTML;
+
+        alert("doAuthorize()" + clientId + ", " + scope);
 //      FHIR.oauth2.authorize({
 //        'client_id': form["client_id"],
 //        'scope':  form["scope"]
 //      });
       }
     </script>
+    
+    <style>
+      table, th, td {
+        border: 1px solid black;
+      }
+      th, td {
+        padding: 5px;
+      }
+    </style>
   </head>
 
   <body onload="insertText();">
     <!-- FHIR Client JS Library -->
     <script src='./lib/js/fhir-client-v0.1.12.js'></script>
 
-    <form action="javascript:doAuthorize();">
-      <table border="1">
+    <form onsubmit="return doAuthorize();">
+      <table border="1" cellpadding="1">
         <tr>
           <td>Launched from</td>
           <td id="launched_from"></td>
@@ -44,6 +56,7 @@
           <td><input type="text" id="scope" name="scope" size="100" value="launch openid profile fhirUser"/></td>
         </tr>
       </table>
+      <br/><br/>
       <input type="submit" value="Proceed with Authorize"/>
     </form>
     
