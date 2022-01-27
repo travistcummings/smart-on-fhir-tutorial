@@ -7,13 +7,13 @@
 
     <script type="text/javascript">
       function insertText() {
-          document.getElementById('launched_from').value = document.referrer;
-          document.getElementById('launch_url').value = window.location.href;
+          document.getElementById('launched_from').innerHTML = document.referrer;
+          document.getElementById('launch_url').innerHTML = window.location.href;
       }
   
       function doAuthorize() {
-        clientId = document.getElementById('client_id').innerHTML;
-        scope = document.getElementById('scope').innerHTML;
+        clientId = document.getElementById('client_id').value;
+        scope = document.getElementById('scope').value;
 
         alert("Calling authorize with client_id [" + clientId + "] and scope [" + scope + "]");
       FHIR.oauth2.authorize({
