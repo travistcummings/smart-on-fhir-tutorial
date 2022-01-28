@@ -17,6 +17,10 @@
         document.getElementById('code').innerHTML = getRequestParam("code");
         document.getElementById('state').innerHTML = getRequestParam("state");
       }
+      
+      function doTokenExchange() {
+        
+      }
     </script>
     
     <style>
@@ -32,6 +36,9 @@
   <body onload="insertText();">
     <h2>Redirect Simple</h2>
 
+    <!-- FHIR Client JS Library -->
+    <script src='./lib/js/fhir-client-v0.1.12.js'></script>
+    
     <form>
       <table border="1" cellpadding="1">
         <tr>
@@ -52,7 +59,7 @@
         </tr>
       </table>
       <br/><br/>
-      <input type="button" value="Proceed with Authorize" onclick="doAuthorize();"/>
+      <input type="button" value="Proceed with Token Exchange" onclick="doTokenExchange();"/>
     </form>
 
   </body>
