@@ -26,15 +26,13 @@
               alert("client: " + client);
               alert("client.state: " + client.state);
               alert("client.state.tokenResponse: " + client.state.tokenResponse);
-              alert("client.state.tokenResponse.access_token: " + client.state.tokenResponse.access_token);
-              alert("client.state.tokenResponse.refresh_token: " + client.state.tokenResponse.refresh_token);
-              alert("client.state.tokenResponse.id_token: " + client.state.tokenResponse.id_token);
-              alert("client.state.tokenResponse.patient: " + client.state.tokenResponse.patient);
-              alert("client.state.tokenResponse.encounter: " + client.state.tokenResponse.encounter);
-              alert("client.state.tokenResponse.provider: " + client.state.tokenResponse.provider);
-              alert("client.state.tokenResponse.scope: " + client.state.tokenResponse.scope);
+              document.getElementById('access_token').innerHTML = client.state.tokenResponse.access_token);
+              document.getElementById('id_token').innerHTML = client.state.tokenResponse.id_token);
+              document.getElementById('patient').innerHTML = client.state.tokenResponse.patient);
+              document.getElementById('encounter').innerHTML = client.state.tokenResponse.encounter);
+              document.getElementById('scope').innerHTML = client.state.tokenResponse.scope);
 //               client.patient.read()
-            }).catch(createRenderer("output"));
+            });
       }
     </script>
     
@@ -73,8 +71,24 @@
           <td id="state"></td>
         </tr>
         <tr>
-          <td>Token Respones</td>
-          <td id="token_response"></td>
+          <td>Access Token</td>
+          <td id="access_token"></td>
+        </tr>
+        <tr>
+          <td>ID Token</td>
+          <td id="id_token"></td>
+        </tr>
+        <tr>
+          <td>Patient</td>
+          <td id="patient"></td>
+        </tr>
+        <tr>
+          <td>Encounter</td>
+          <td id="encounter"></td>
+        </tr>
+        <tr>
+          <td>Scope</td>
+          <td id="scope"></td>
         </tr>
       </table>
       <br/><br/>
