@@ -21,6 +21,7 @@
       function doTokenExchange() {
         // normally this should happen automatically, but placed inside a function for demonstration purposes
         FHIR.oauth2.ready()
+          .then(document.getElementById('token_reseponse').innerHTML = sessionStorage.tokenResponse)
           .then(client => client.request("Patient"))
           .then(console.log)
           .catch(console.error);
@@ -60,6 +61,10 @@
         <tr>
           <td>State</td>
           <td id="state"></td>
+        </tr>
+        <tr>
+          <td>Token Respones</td>
+          <td id="token_response"></td>
         </tr>
       </table>
       <br/><br/>
