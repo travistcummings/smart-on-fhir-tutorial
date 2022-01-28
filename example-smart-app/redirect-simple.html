@@ -23,10 +23,10 @@
     <script type="text/javascript">
       function doTokenExchange() {
             FHIR.oauth2.ready().then(function(client) {
-                var app = new App(client);
-                App.prototype.setLabel("output", "Conformance Statement");
-                app.renderContext();
-                app.request("metadata");
+              alert("client: " + client);
+              alert("client.state: " + client.state);
+              alert("client.state.tokenResponse: " + client.state.tokenResponse);
+//               client.patient.read()
             }).catch(createRenderer("output"));
       }
     </script>
