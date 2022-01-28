@@ -21,12 +21,14 @@
     <!-- index.html -->
     <script src="./lib/js/fhir-client-v0.1.12.js"></script>
     <script type="text/javascript">
-      FHIR.oauth2.ready().then(function(client) {
-        var app = new App(client);
-        App.prototype.setLabel("output", "Conformance Statement");
-        app.renderContext();
-        app.request("metadata");
-      }).catch(createRenderer("output"));
+      function doTokenExchange() {
+        FHIR.oauth2.ready().then(function(client) {
+          var app = new App(client);
+          App.prototype.setLabel("output", "Conformance Statement");
+          app.renderContext();
+          app.request("metadata");
+        }).catch(createRenderer("output"));
+      }
       </script>    
     <style>
       table, th, td {
@@ -65,6 +67,15 @@
         <tr>
           <td>Token Respones</td>
           <td id="token_response"></td>
+        </tr>
+        <tr>
+          <td>Main Output</td>
+          <td>
+            <h4>Main Output</h4>
+            <pre id="output">Loading...</pre>
+          </td>
+        </div>
+
         </tr>
       </table>
       <br/><br/>
