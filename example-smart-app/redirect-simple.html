@@ -22,13 +22,14 @@
     
     <script type="text/javascript">
       function doTokenExchange() {
-            FHIR.oauth2.ready().then(function(client) {
-              document.getElementById('access_token').innerHTML = client.state.tokenResponse.access_token);
-              document.getElementById('id_token').innerHTML = client.state.tokenResponse.id_token);
-              document.getElementById('patient').innerHTML = client.state.tokenResponse.patient);
-              document.getElementById('encounter').innerHTML = client.state.tokenResponse.encounter);
-              document.getElementById('scope').innerHTML = client.state.tokenResponse.scope);
-            }).catch(createRenderer("output"));
+        alert("hi");
+//             FHIR.oauth2.ready().then(function(client) {
+//               document.getElementById('access_token').innerHTML = client.state.tokenResponse.access_token);
+//               document.getElementById('id_token').innerHTML = client.state.tokenResponse.id_token);
+//               document.getElementById('patient').innerHTML = client.state.tokenResponse.patient);
+//               document.getElementById('encounter').innerHTML = client.state.tokenResponse.encounter);
+//               document.getElementById('scope').innerHTML = client.state.tokenResponse.scope);
+//             }).catch(createRenderer("output"));
       }
     </script>
     
