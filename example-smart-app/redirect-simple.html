@@ -20,15 +20,14 @@
     </script>
     <!-- index.html -->
     <script src="./lib/js/fhir-client-v0.1.12.js"></script>
-    <script>
-    FHIR.oauth2.ready()
-        .then(client => client.request("Patient"))
-        .then(console.log)
-        .catch(console.error);
-              alert("back from FHIR.oauth2.ready()");
-
-    </script>
-    
+    <script type="text/javascript">
+      FHIR.oauth2.ready().then(function(client) {
+        var app = new App(client);
+        App.prototype.setLabel("output", "Conformance Statement");
+        app.renderContext();
+        app.request("metadata");
+      }).catch(createRenderer("output"));
+      </script>    
     <style>
       table, th, td {
         border: 1px solid black;
