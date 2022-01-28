@@ -26,6 +26,13 @@
               alert("client: " + client);
               alert("client.state: " + client.state);
               alert("client.state.tokenResponse: " + client.state.tokenResponse);
+              alert("client.state.tokenResponse.access_token: " + client.state.tokenResponse.access_token);
+              alert("client.state.tokenResponse.refresh_token: " + client.state.tokenResponse.refresh_token);
+              alert("client.state.tokenResponse.id_token: " + client.state.tokenResponse.id_token);
+              alert("client.state.tokenResponse.patient: " + client.state.tokenResponse.patient);
+              alert("client.state.tokenResponse.encounter: " + client.state.tokenResponse.encounter);
+              alert("client.state.tokenResponse.provider: " + client.state.tokenResponse.provider);
+              alert("client.state.tokenResponse.scope: " + client.state.tokenResponse.scope);
 //               client.patient.read()
             }).catch(createRenderer("output"));
       }
@@ -68,15 +75,6 @@
         <tr>
           <td>Token Respones</td>
           <td id="token_response"></td>
-        </tr>
-        <tr>
-          <td>Main Output</td>
-          <td>
-            <h4>Main Output</h4>
-            <pre id="output">Loading...</pre>
-          </td>
-        </div>
-
         </tr>
       </table>
       <br/><br/>
