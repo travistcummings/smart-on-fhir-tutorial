@@ -17,16 +17,16 @@
         document.getElementById('code').innerHTML = getRequestParam("code");
         document.getElementById('state').innerHTML = getRequestParam("state");
       }
-      
-      function doTokenExchange() {
-        // normally this should happen automatically, but placed inside a function for demonstration purposes
-        import FHIR from "fhirclient"
-        FHIR.oauth2.ready()
-          .then(client => client.request("Patient"))
-          .then(console.log)
-          .catch(console.error);
-        alert("back from FHIR.oauth2.ready()");
-      }
+    </script>
+    <!-- index.html -->
+    <script src="./lib/js/fhir-client-v0.1.12.js"></script>
+    <script>
+    FHIR.oauth2.ready()
+        .then(client => client.request("Patient"))
+        .then(console.log)
+        .catch(console.error);
+              alert("back from FHIR.oauth2.ready()");
+
     </script>
     
     <style>
@@ -43,8 +43,8 @@
     <h2>Redirect Simple</h2>
 
     <!-- FHIR Client JS Library -->
-    <script src='./lib/js/fhir-client-v0.1.12.js'></script>
-    
+<!--     <script src='./lib/js/fhir-client-v0.1.12.js'></script>
+     -->
     <form>
       <table border="1" cellpadding="1">
         <tr>
