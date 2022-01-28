@@ -31,9 +31,9 @@
                document.getElementById('encounter').innerHTML = client.state.tokenResponse.encounter;
                document.getElementById('scope').innerHTML = client.state.tokenResponse.scope;
              }
-            ).catch(err) {
-              alert("Err: " + err);
-            };
+            ).catch((error) => {
+              console.error(error);
+            });
       }
     </script>
     
